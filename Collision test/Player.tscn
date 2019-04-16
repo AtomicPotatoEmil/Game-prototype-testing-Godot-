@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Idle00.png" type="Texture" id=2]
+[ext_resource path="res://Area2D.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11.2588, 15.5112 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="Player" type="Area2D" groups=[
+"Player",
+]]
+position = Vector2( -8.76092, -1.99474 )
+script = ExtResource( 1 )
+SPEED = 200
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 8.9111, 7.99353 )
+scale = Vector2( 1.5859, 1.47064 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 7.06921, 3.07358 )
+shape = SubResource( 1 )
+
+[node name="Weapon" type="Area2D" parent="." groups=[
+"weapon",
+]]
+position = Vector2( 33.357, 3.70633 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon"]
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
