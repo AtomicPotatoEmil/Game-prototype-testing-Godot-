@@ -2,9 +2,11 @@ extends Area2D
 
 
 
-export (int) var SPEED
+var SPEED = 150
 var motion = Vector2()
 var LIFE = 3
+var RUSH = false
+
 func get_input():
 	motion = Vector2()
 	if Input.is_key_pressed(KEY_D):
@@ -32,7 +34,7 @@ func get_input():
 
 func _process(delta):
 	get_input()
-	
+	Rush_move()
 	position += motion * delta
 	
 	 
@@ -48,6 +50,13 @@ func _on_Player_area_entered(area):
 		LIFE += 1
 		area.pickup()
 		print(LIFE)
+	if area.is_in_group("Rush Powerup"):
+		RUSH = true
 
-
+func Rush_move():
+	if RUSH == true:
+		if Input.is_action_pressed("rush"):
+			SPEED = 450
+		else:
+			SPEED = 150
 
