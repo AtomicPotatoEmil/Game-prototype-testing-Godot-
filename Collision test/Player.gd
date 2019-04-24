@@ -1,7 +1,5 @@
 extends Area2D
 
-
-
 var SPEED = 150
 var motion = Vector2()
 var LIFE = 3
@@ -28,22 +26,17 @@ func get_input():
 		$Sprite.flip_h = true
 		if sign($Weapon.position.x) == 1:
 					$Weapon.position.x *= -1
-	
-	
-	
 
 func _process(delta):
 	get_input()
 	Rush_move()
 	position += motion * delta
-	
-	 
-
 
 func _on_Player_area_entered(area):
 	if area.is_in_group("enemy"):
-		LIFE -= 1
-		print(LIFE)
+		if area.isAlive:
+			LIFE -= 1
+			print(LIFE)
 	if LIFE == 0:
 		queue_free()
 	if area.is_in_group("life"):
