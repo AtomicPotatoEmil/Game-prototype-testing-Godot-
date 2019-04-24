@@ -5,8 +5,9 @@ var speed = 100
 var isAlive = true
 
 func _on_enemy_area_entered(area):
+	var weapon = get_node("/root/Weapon")
 	if area.is_in_group("weapon"):
-		LIFE -= 1
+		LIFE -= weapon.damage
 		print(LIFE)
 		if LIFE <= 0:
 			self.dead()

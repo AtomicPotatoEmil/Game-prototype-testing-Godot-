@@ -45,6 +45,9 @@ func _on_Player_area_entered(area):
 		print(LIFE)
 	if area.is_in_group("Rush Powerup"):
 		RUSH = true
+	var weaponpower = get_node("/root/Weapon")
+	if area.is_in_group("WeaponPow"):
+		weaponpower.damage += 2
 
 func Rush_move():
 	if RUSH == true:
