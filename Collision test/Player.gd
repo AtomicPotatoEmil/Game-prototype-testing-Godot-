@@ -4,6 +4,11 @@ var SPEED = 150
 var motion = Vector2()
 var LIFE = 3
 var RUSH = false
+var initial_weapon_x = null
+
+func _ready():
+	#self.initial_weapon_x = $CollisionShape2D.shape.get_extents().x
+	self.initial_weapon_x = $Weapon.position.x
 
 func get_input():
 	motion = Vector2()
@@ -21,11 +26,11 @@ func get_input():
 	if motion.x > 0:
 		$Sprite.flip_h = false
 		if sign($Weapon.position.x) == -1: 
-					$Weapon.position.x *= -1
+			$Weapon.position.x = self.initial_weapon_x
 	if motion.x < 0:
 		$Sprite.flip_h = true
 		if sign($Weapon.position.x) == 1:
-					$Weapon.position.x *= -1
+			$Weapon.position.x = 0 - ($CollisionShape2D.shape.get_extents().x * 1.7)
 
 func _process(delta):
 	get_input()
@@ -45,6 +50,9 @@ func _on_Player_area_entered(area):
 		print(LIFE)
 	if area.is_in_group("Rush Powerup"):
 		RUSH = true
+	var weaponpower = get_node("/root/Weapon")
+	if area.is_in_group("WeaponPow"):
+		weaponpower.damage += 2
 
 func Rush_move():
 	if RUSH == true:
