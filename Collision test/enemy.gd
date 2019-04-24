@@ -1,6 +1,6 @@
 extends Area2D
 
-var LIFE = 3000
+var LIFE = 3
 var speed = 100
 var isAlive = true
 
@@ -31,6 +31,7 @@ func dead():
 	print($Sprite)
 	var tween = Tween.new()
 	add_child(tween)
+	$AudioStreamPlayer2D.play()
 	tween.interpolate_property($Sprite, "modulate:a", null, 0.0, 2.0, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	tween.interpolate_property($Sprite, "rotation_degrees", null, 90.0, 0.2, Tween.TRANS_QUAD, Tween.EASE_IN)
 	tween.start()
