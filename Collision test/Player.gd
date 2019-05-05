@@ -10,6 +10,17 @@ func _ready():
 	#self.initial_weapon_x = $CollisionShape2D.shape.get_extents().x
 	self.initial_weapon_x = $Weapon.position.x
 
+func save():
+	return {
+		"filename": get_filename(),
+		"parent": get_parent().get_path(),
+		"name": "player",
+		"health": self.LIFE
+	}
+
+func load(data):
+	self.LIFE = data.health
+
 func get_input():
 	motion = Vector2()
 	if Input.is_key_pressed(KEY_D):
