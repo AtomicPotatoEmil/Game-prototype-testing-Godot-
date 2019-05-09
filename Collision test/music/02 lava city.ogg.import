@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/02 lava city.ogg-e80166cc55f3eda47ebd3aeb43fe2efd.oggstr"
+
+[deps]
+
+source_file="res://music/02 lava city.ogg"
+dest_files=[ "res://.import/02 lava city.ogg-e80166cc55f3eda47ebd3aeb43fe2efd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

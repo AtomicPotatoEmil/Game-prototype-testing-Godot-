@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/08 endless sands.ogg-48cc6e86eaba77cb16431800bb1ad5c7.oggstr"
+
+[deps]
+
+source_file="res://music/08 endless sands.ogg"
+dest_files=[ "res://.import/08 endless sands.ogg-48cc6e86eaba77cb16431800bb1ad5c7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

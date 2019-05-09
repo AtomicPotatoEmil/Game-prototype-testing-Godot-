@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/09 green forest.ogg-2337f7b78f1b175dcd537c7c69cabbdb.oggstr"
+
+[deps]
+
+source_file="res://music/09 green forest.ogg"
+dest_files=[ "res://.import/09 green forest.ogg-2337f7b78f1b175dcd537c7c69cabbdb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

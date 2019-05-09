@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/06 pirates attack.ogg-be3bb9dd52ff3b73de52e72cb0f828fa.oggstr"
+
+[deps]
+
+source_file="res://music/06 pirates attack.ogg"
+dest_files=[ "res://.import/06 pirates attack.ogg-be3bb9dd52ff3b73de52e72cb0f828fa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

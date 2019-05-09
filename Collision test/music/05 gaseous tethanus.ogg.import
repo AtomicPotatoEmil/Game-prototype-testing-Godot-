@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/05 gaseous tethanus.ogg-5cc12e5f79ba76ecb0f00c5bbd58f045.oggstr"
+
+[deps]
+
+source_file="res://music/05 gaseous tethanus.ogg"
+dest_files=[ "res://.import/05 gaseous tethanus.ogg-5cc12e5f79ba76ecb0f00c5bbd58f045.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

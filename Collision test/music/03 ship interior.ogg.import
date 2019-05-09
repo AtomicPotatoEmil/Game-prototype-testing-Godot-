@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/03 ship interior.ogg-5a8538ce8ee0000afc772e272a9d07ad.oggstr"
+
+[deps]
+
+source_file="res://music/03 ship interior.ogg"
+dest_files=[ "res://.import/03 ship interior.ogg-5a8538ce8ee0000afc772e272a9d07ad.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

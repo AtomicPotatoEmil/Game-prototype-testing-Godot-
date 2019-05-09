@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/07 high in the mountains.ogg-f60b7fd13fa52849efc20872f3d01fe6.oggstr"
+
+[deps]
+
+source_file="res://music/07 high in the mountains.ogg"
+dest_files=[ "res://.import/07 high in the mountains.ogg-f60b7fd13fa52849efc20872f3d01fe6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

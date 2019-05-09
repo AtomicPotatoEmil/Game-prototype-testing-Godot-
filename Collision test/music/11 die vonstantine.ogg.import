@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/11 die vonstantine.ogg-d699348c8dfe0455c4a3411e5459129c.oggstr"
+
+[deps]
+
+source_file="res://music/11 die vonstantine.ogg"
+dest_files=[ "res://.import/11 die vonstantine.ogg-d699348c8dfe0455c4a3411e5459129c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
