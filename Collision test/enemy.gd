@@ -15,18 +15,28 @@ func _on_enemy_area_entered(area):
 		else:
 			self.bounce_me_back(area)
 
-func _process(delta):
-	var player = get_node("../Player")
-	print(player.position)
-	if player.position.x < self.position.x:
-		self.position.x -= 1
-	elif player.position.x > self.position.x:
-		self.position.x += 1
-	if player.position.y < self.position.y:
-		self.position.y -= 1
-	elif player.position.y > self.position.y:
-		self.position.y += 1
+func _ready():
+	self.yell()
 
+func _process(delta):
+	var player = get_node_or_null("../Player")
+	if player:
+		if player.position.x < self.position.x:
+			self.position.x -= 1
+		elif player.position.x > self.position.x:
+			self.position.x += 1
+		if player.position.y < self.position.y:
+			self.position.y -= 1
+		elif player.position.y > self.position.y:
+			self.position.y += 1
+			
+		var rand = int(rand_range(1, 250)) - 1
+		if(rand == 1):
+			self.yell()
+
+func yell():
+	$battlecry.play()
+	
 func bounce_me_back(weapon):
 	var player = weapon.get_owner()
 	

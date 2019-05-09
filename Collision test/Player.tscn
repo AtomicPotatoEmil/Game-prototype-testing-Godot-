@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Idle00.png" type="Texture" id=2]
-[ext_resource path="res://Weapon.gd" type="Script" id=3]
+[ext_resource path="res://Area2D.gd" type="Script" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -28,20 +28,17 @@ shape = SubResource( 1 )
 [node name="Weapon" type="Area2D" parent="." groups=[
 "weapon",
 ]]
-position = Vector2( 32.5248, 4.26111 )
+position = Vector2( 33.357, 3.70633 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon"]
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Weapon/CollisionShape2D"]
-position = Vector2( 0.694929, 0.926577 )
-scale = Vector2( 0.312302, 0.305063 )
+position = Vector2( 0.203536, 0.0818167 )
+scale = Vector2( 0.312242, 0.316046 )
 texture = ExtResource( 4 )
 
 [connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]

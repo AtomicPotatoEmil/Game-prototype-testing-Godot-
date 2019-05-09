@@ -7,7 +7,6 @@ var RUSH = false
 var initial_weapon_x = null
 
 func _ready():
-	#self.initial_weapon_x = $CollisionShape2D.shape.get_extents().x
 	self.initial_weapon_x = $Weapon.position.x
 
 func save():
