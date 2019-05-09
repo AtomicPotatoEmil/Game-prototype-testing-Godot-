@@ -11,16 +11,16 @@ func _on_enemy_area_entered(area):
 		LIFE -= player.damage
 		print(LIFE)
 		if LIFE <= 0:
-			self.dead()
+			dead()
 		else:
-			self.bounce_me_back(area)
+			bounce_me_back(area)
 
 func _ready():
-	self.yell()
+	yell()
 
 func _process(delta):
 	var player = get_node_or_null("../Player")
-	if player:
+	if player and isAlive == true:
 		if player.position.x < self.position.x:
 			self.position.x -= 1
 		elif player.position.x > self.position.x:
@@ -32,7 +32,7 @@ func _process(delta):
 			
 		var rand = int(rand_range(1, 250)) - 1
 		if(rand == 1):
-			self.yell()
+			yell()
 
 func yell():
 	$battlecry.play()
@@ -50,7 +50,7 @@ func bounce_me_back(weapon):
 	tween.start()
 
 func dead():
-	self.isAlive = false
+	isAlive = false
 	print($Sprite)
 	var tween = Tween.new()
 	add_child(tween)
