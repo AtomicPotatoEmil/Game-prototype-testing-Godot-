@@ -9,7 +9,6 @@ func _on_enemy_area_entered(area):
 	if area.is_in_group("weapon"):
 		$Hit.play()
 		LIFE -= player.damage
-		print(LIFE)
 		if LIFE <= 0:
 			dead()
 		else:
@@ -49,17 +48,25 @@ func bounce_me_back(weapon):
 		tween.interpolate_property(self, "position:x", null, self.position.x - 20.0, 0.02, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	tween.start()
 
+func drop_loot():
+	var heart = load("res://Heart.tscn")
+	var heart_instance = heart.instance()
+	heart_instance.position.x = self.position.x
+	heart_instance.position.y = self.position.y;
+	self.get_parent().add_child(heart_instance)
+
 func dead():
 	isAlive = false
-	print($Sprite)
+	self.drop_loot()
 	var tween = Tween.new()
 	add_child(tween)
 	$Death.play()
 	tween.interpolate_property($Sprite, "modulate:a", null, 0.0, 2.0, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	tween.interpolate_property($Sprite, "rotation_degrees", null, 90.0, 0.2, Tween.TRANS_QUAD, Tween.EASE_IN)
 	tween.start()
-	
 	yield( get_tree().create_timer(2.0), "timeout" )
 	queue_free()
+	
+	
 
 
