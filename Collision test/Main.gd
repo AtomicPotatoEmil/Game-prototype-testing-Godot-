@@ -8,6 +8,14 @@ extends Node2D
 func _ready():
 	$music.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	var rand = int(rand_range(1, 100)) - 1
+	if(rand == 1):
+		self.spawn_enemy()
+
+func spawn_enemy():
+	var enemy = preload("res://enemy.tscn")
+	if enemy:
+		var enemy_instance = enemy.instance()
+		add_child(enemy_instance)
+
